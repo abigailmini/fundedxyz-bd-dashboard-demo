@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="color-scheme" content="dark"/>
+<title>FundedXYZ - BD &amp; Affiliate Dashboard (Demo)</title>
+<link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login" class="login-wrap">
+  <form class="login-card" id="loginForm" autocomplete="off">
+    <div class="brand"><div class="brand-mark">XYZ</div><div class="brand-name">FundedXYZ</div></div>
+    <span class="demo-badge">DEMO &middot; SAMPLE DATA</span>
+    <div class="brand-sub">BD &amp; Affiliate Sales Dashboard</div>
+    <label for="userSel">Sign in as</label>
+    <select id="userSel" class="user-select"></select>
+    <label for="password">Demo password</label>
+    <input id="password" name="password" type="password" value="demo123" autocomplete="off"/>
+    <div class="pw-note">Password for every demo account is <b>demo123</b>.</div>
+    <button class="btn block" type="submit">Sign in</button>
+    <div class="err" id="loginErr"></div>
+    <div class="demo-hint">Choose any user to see exactly what that role sees. <b>Admins</b> (David, Khong Ming) see everything. <b>Kate</b> (BD) sees only her affiliates, team total and her BD commission. <b>Affiliates</b> see only their own sales. All data is fictional sample data.</div>
+  </form>
+</div>
+
+<!-- APP -->
+<div id="app" class="app hidden">
+  <aside class="side">
+    <div class="brand"><div class="brand-mark">XYZ</div><div class="brand-name">FundedXYZ</div></div>
+    <a class="nav-item active" data-view="overview">Overview</a>
+    <a class="nav-item" data-view="affiliates" id="navAffiliates">Affiliates</a>
+    <a class="nav-item" data-view="leaderboard">Leaderboard</a>
+    <a class="nav-item" data-view="products">Products</a>
+    <a class="nav-item" data-view="admin" id="navAdmin">Admin</a>
+    <div class="side-foot">
+      <div id="whoName" style="color:var(--text);font-weight:600"></div>
+      <div id="whoRole"></div>
+      <a href="#" id="logout" style="color:var(--muted);display:block;margin-top:8px">Sign out</a>
+    </div>
+  </aside>
+  <div class="main">
+    <div class="topbar">
+      <h1 id="viewTitle">Overview</h1>
+      <span class="chip role" id="roleChip"></span>
+      <span class="demo-badge topbadge">DEMO &middot; SAMPLE DATA</span>
+      <div class="spacer"></div>
+      <div class="ranges" id="ranges">
+        <button data-r="today">Today</button>
+        <button data-r="7d">7D</button>
+        <button data-r="mtd">MTD</button>
+        <button data-r="all" class="active">All</button>
+      </div>
+      <a class="btn ghost sm" id="exportBtn">Export CSV</a>
+      <a href="#" class="btn ghost sm mobile-only" id="logout2">Out</a>
+    </div>
+    <div class="content" id="content"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="./data.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
